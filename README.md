@@ -119,6 +119,7 @@ It follows a **serverless architecture** using AWS services for scalability and 
 
 # 📁 Project Structure
 
+```text
 aws-eye-hospital-emr/
 │
 ├── index.html
@@ -147,7 +148,7 @@ aws-eye-hospital-emr/
 │   ├── doctornotes-table.png
 │   ├── public-emr-website.png
 │   ├── working-emr-system.png
-│
+```
 ---
 
 # 📈 Key Features
