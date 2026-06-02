@@ -119,6 +119,35 @@ It follows a **serverless architecture** using AWS services for scalability and 
 
 # 📁 Project Structure
 
+aws-eye-hospital-emr/
+│
+├── index.html
+├── styles.css
+├── script.js
+│
+├── README.md
+│
+├── screenshots/
+│   ├── architecture-diagram.png
+│   ├── s3-bucket.png
+│   ├── s3-static-website-hosting.png
+│   ├── dynamodb-dashboard.png
+│   ├── lambda-create-function.png
+│   ├── lambda-test-success.png
+│   ├── api-gateway-resources.png
+│   ├── api-gateway-live-response.png
+│   ├── iam-role-policy.png
+│   ├── login-page.png
+│   ├── dashboard-page.png
+│   ├── patient-records-page.png
+│   ├── patients-table.png
+│   ├── appointments-page.png
+│   ├── appointments-table.png
+│   ├── doctor-notes-page.png
+│   ├── doctornotes-table.png
+│   ├── public-emr-website.png
+│   ├── working-emr-system.png
+│
 ---
 
 # 📈 Key Features
