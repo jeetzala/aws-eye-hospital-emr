@@ -6,8 +6,7 @@ This project demonstrates a real-world healthcare application using **S3, Dynamo
 ---
 
 ## 🚀 Live Demo
-👉 https://your-public-emr-website-url  
-*(Replace with S3 hosted website link)*
+👉 (http://jeet-eye-hospital-emr-demo.s3-website-us-east-1.amazonaws.com)
 
 ---
 
@@ -149,7 +148,7 @@ It follows a **serverless architecture** using AWS services for scalability and 
 
 **Jeet Zala**  
 Cloud & AWS Enthusiast  
-BBA + MBA (Marketing) → Transitioning into Cloud & DevOps
+
 
 ---
 
