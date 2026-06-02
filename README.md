@@ -122,9 +122,11 @@ It follows a **serverless architecture** using AWS services for scalability and 
 ```text
 aws-eye-hospital-emr/
 │
-├── index.html
-├── styles.css
-├── script.js
+├── frontend/
+    ├── css/
+        ├── styles.css
+├── js/
+├── app.js
 │
 ├── README.md
 │
