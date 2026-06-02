@@ -144,14 +144,28 @@ It follows a **serverless architecture** using AWS services for scalability and 
 
 ---
 
-# 👨‍💻 Author
+🏷️ Project Tags
 
-**Jeet Zala**  
-Cloud & AWS Enthusiast  
-
+AWS • Serverless • S3 • DynamoDB • Lambda • API Gateway • IAM • Cloud Computing • EMR System • Healthcare IT
 
 ---
 
-# ⚠️ Disclaimer
+🔗 Connect With Me
 
-This project is built for educational purposes to demonstrate AWS cloud architecture and serverless application design.
+GitHub: https://github.com/jeetzala
+LinkedIn: https://www.linkedin.com/in/jeet-zala-6633832ba/
+
+---
+
+🏆 Credits
+
+Built by Jeet Zala as part of my AWS Cloud learning journey and portfolio development.
+
+---
+
+👨‍💻 Author
+
+Jeet Zala
+AWS Cloud Portfolio Project
+
+
