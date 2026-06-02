@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Records</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    margin:0;
+}
+
+.header{
+    background:#0B6E99;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.header h1{
+    color:white;
+    margin:0;
+}
+
+.container{
+    max-width:1200px;
+    margin:30px auto;
+    padding:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+th{
+    background:#0B6E99;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f7f7f7;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-bottom:20px;
+    padding:10px 18px;
+    background:#0B6E99;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.note-btn{
+    background:#2BB673;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.note-btn:hover{
+    opacity:0.9;
+}
+
+.loading{
+    text-align:center;
+    padding:20px;
+    color:#666;
+    font-weight:bold;
+}
+
+.error{
+    text-align:center;
+    padding:20px;
+    color:red;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>👁️ Patient Records</h1>
+</div>
+
+<div class="container">
+
+<a href="dashboard.html" class="back-btn">
+← Back to Dashboard
+</a>
+
+<table>
+
+<thead>
+<tr>
+<th>Patient ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Diagnosis</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="patientTable">
+
+<tr>
+<td colspan="6" class="loading">
+Loading Patient Records...
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<script>
+
+async function loadPatients(){
+
+    try{
+
+        const response = await fetch(
+            "https://ljy5okm2le.execute-api.us-east-1.amazonaws.com/prod/patients"
+        );
+
+        const patients = await response.json();
+
+        // Sort Patient IDs numerically
+        patients.sort((a, b) =>
+            parseInt(a.PatientID.substring(1)) -
+            parseInt(b.PatientID.substring(1))
+        );
+
+        let html = "";
+
+        patients.forEach(patient => {
+
+            html += `
+            <tr>
+                <td>${patient.PatientID}</td>
+                <td>${patient.Name}</td>
+                <td>${patient.Age}</td>
+                <td>${patient.Gender}</td>
+                <td>${patient.Diagnosis}</td>
+                <td>
+                    <a href="doctor-notes.html">
+                        <button class="note-btn">
+                            View Notes
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            `;
+
+        });
+
+        document.getElementById("patientTable").innerHTML = html;
+
+    }
+    catch(error){
+
+        document.getElementById("patientTable").innerHTML = `
+        <tr>
+            <td colspan="6" class="error">
+                Failed to load patient records.
+            </td>
+        </tr>
+        `;
+
+        console.error("Error loading patients:", error);
+
+    }
+
+}
+
+loadPatients();
+
+</script>
+
+</body>
+</html>
