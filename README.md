@@ -125,8 +125,8 @@ aws-eye-hospital-emr/
 ├── frontend/
     ├── css/
         ├── styles.css
-├── js/
-    ├── app.js
+    ├── js/
+        ├── app.js
 │
 ├── README.md
 │
